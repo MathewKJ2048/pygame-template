@@ -7,6 +7,9 @@ GREEN = (100,250,100)
 PURPLE = (100,0,200)
 RED = (220,20,60)
 
+
+BACKGROUND = BLACK
+
 def darken(c,f):
     """
     c = (r,g,b), f in [0,1], f is the factor by which each element of c is multiplied

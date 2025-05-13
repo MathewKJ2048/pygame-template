@@ -2,3 +2,4 @@ NAME = "Template"
 
 HEIGHT = 800
 WIDTH = 1200
+MAX_FRAME_RATE = 60
