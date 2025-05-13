@@ -6,6 +6,8 @@ radius is a function
 color is a function
 """
 
+
+
 class Particle:
 	def __init__(self,r=O,v=O,a=O,lifetime=1):
 		self.time = 0

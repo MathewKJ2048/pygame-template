@@ -44,3 +44,5 @@ def pri(message):
 # Use physics convention for theta and phi
 def unit_vector(theta,phi=PI/2):
 	return sin(phi)*(cos(theta)*I + sin(theta)*J)+cos(phi)*K
+
+
