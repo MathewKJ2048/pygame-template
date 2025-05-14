@@ -6,15 +6,19 @@ from render import *
 def init():
 	pygame.init()
 	pygame.display.set_caption(NAME)
+	pygame.display.set_icon(pygame.image.load("assets/icon.ico"))
+	screen = pygame.display.set_mode((WIDTH, HEIGHT))
+	return screen
 
 
 def print_logs(dt):
 	log("framerate:",round(1/dt))
 	print(get_debug_transcript())
 
+
 def play():
 	game = Game()
-	screen = pygame.display.set_mode((WIDTH, HEIGHT))
+	screen = init()
 	while game.running:
 		dt = CLOCK.tick(MAX_FRAME_RATE)/1000
 

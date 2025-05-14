@@ -11,7 +11,8 @@ zoom = scaling factor for an object
 
 class Camera:
 	def __init__(self,r=O,n=I,p=K,zoom=100):
-		self.r = -10*I+10*J
+		self.r = -3*I+K
 		self.n = n
 		self.up = p
 		self.zoom = zoom
+		self.v = O

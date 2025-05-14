@@ -3,13 +3,11 @@ from camera import *
 def project(r,camera):
 	side = -camera.n.cross(camera.up)
 	rd = r-camera.r
-	log("length",rd)
 	component_up = rd.dot(camera.up)
-	log("component_up",component_up)
 	component_side = rd.dot(side)
-	X = camera.zoom*component_side
-	Y = camera.zoom*component_up
-	log("Y",Y)
+	component_dist = rd.dot(camera.n)
+	X = camera.zoom*component_side/component_dist
+	Y = camera.zoom*component_up/component_dist
 	return (WIDTH/2+X,HEIGHT/2-Y)
 
 def render_object(o,camera,surface):

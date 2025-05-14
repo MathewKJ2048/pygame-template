@@ -7,6 +7,7 @@ from colors import *
 from wireframe import *
 import random
 import math
+from pathlib import Path
 
 import pygame
 from pygame import Vector3
@@ -44,5 +45,11 @@ def pri(message):
 # Use physics convention for theta and phi
 def unit_vector(theta,phi=PI/2):
 	return sin(phi)*(cos(theta)*I + sin(theta)*J)+cos(phi)*K
+
+def rotate(v,theta,phi=0):
+	r = math.sqrt(v.x*v.x+v.y*v.y)
+	t = math.atan2(v.y,v.x)
+	p = math.atan2(r,v.z)
+	return unit_vector(t+theta,p+phi)
 
 

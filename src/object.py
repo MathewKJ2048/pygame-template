@@ -21,9 +21,8 @@ class Object:
 		self.time+=dt
 
 	def get_lines(self):
-		N = 6
+		N = 4
 		base = [unit_vector(i*TAU/N) for i in range(N)]
-		log("base",base)
 		return make_polygon(base,color=CYAN)+join_polygon_point(base,K,color=MAGENTA)
 
 	
