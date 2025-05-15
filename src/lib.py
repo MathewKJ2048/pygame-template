@@ -23,24 +23,27 @@ cos = math.cos
 sin = math.sin
 
 CLOCK = pygame.time.Clock()
+pygame.font.init()
+DEFAULT_FONT = pygame.font.Font(None, 32)
 
 debug_transcript = {}
-message_log = {}
+message_log = ["message log created"]
 
 def get_debug_transcript():
 	global debug_transcript
 	return debug_transcript
 
+def get_message_log():
+	global message_log
+	return message_log
+
 def log(key,value):
 	global debug_transcript
 	debug_transcript[key]=value
 
-def pri(message):
+def msg(message):
 	global message_log
-	if message in message_log:
-		message_log[message] = 1
-	else:
-		message_log[message]+=1
+	message_log.append(message)
 
 # Use physics convention for theta and phi
 def unit_vector(theta,phi=PI/2):

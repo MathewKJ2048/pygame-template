@@ -35,7 +35,7 @@ run: $(VENV)/bin/python
 # Build executable (ensure venv exists and use its PyInstaller)
 build: $(VENV)/bin/python
 	@echo "Building executable..."
-	$(VENV)/bin/pyinstaller --onefile --icon $(ICON) --name $(EXE_NAME) $(SRC)
+	$(VENV)/bin/pyinstaller --onefile --add-data "assets:./dist/assets" --icon $(ICON) --name $(EXE_NAME) $(SRC)
 	@echo "Executable created in dist/"
 
 # Rule to ensure venv exists (shared dependency for run/build)

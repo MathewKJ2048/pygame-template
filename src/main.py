@@ -11,11 +11,6 @@ def init():
 	return screen
 
 
-def print_logs(dt):
-	log("framerate:",round(1/dt))
-	print(get_debug_transcript())
-
-
 def play():
 	game = Game()
 	screen = init()
@@ -32,6 +27,5 @@ def play():
 		game.evolve(dt)
 		screen.blit(render(game),(0,0))
 		pygame.display.flip()
-		print_logs(dt)
 
 play()
